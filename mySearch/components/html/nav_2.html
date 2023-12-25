@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+
+    <title>漂亮的导航栏动效</title>
+    <!-- 引入字体图标 -->
+    <link rel="stylesheet" href="../iconfont/iconfont.css">
+    <link rel="stylesheet" href="../css/nav_2.css">
+</head>
+<body>
+    <div class="tabbar">
+        <ul>
+            <li class="item active">
+                <a>
+                    <span class="icon">
+                        <i class="iconfont icon-shouye" aria-hidden="true"></i>
+                        <a href="../../index.html"><span class="text">返回主页</span></a>
+                    </span>                   
+                </a> 
+            </li>
+            <li class="item">
+                <a>
+                    <span class="icon">
+                        <i class="iconfont icon-shizhong"></i>
+                    </span>
+                    <a href="./clock.html" target="_blank"><span class="text">罗盘时钟</span></a>
+                </a>
+            </li>
+            <li class="item">
+                <a>
+                    <span class="icon">
+                        <i class="iconfont icon-rili" aria-hidden="true"></i>
+                    </span>
+                    <a href="./day.html" target="_blank"><span class="text">日历</span></a>
+                </a>
+            </li>
+            <li class="item">
+                <a>
+                    <span class="icon">
+                        <i class="iconfont icon-yinle" aria-hidden="true"></i>
+                    </span>
+                    <a href="./musiPlay.html" target="_blank"><span class="text">站内音乐</span></a>
+                </a>
+            </li>
+            <li class="item">
+                <a>
+                    <span class="icon">
+                        <i class="iconfont icon-liebiao" aria-hidden="true"></i>
+                    </span>
+                    <a href="./my3dText.html" target="_blank"><span class="text">关于我的</span></a>
+                </a>
+            </li>
+            <div class="active-bg"></div>
+        </ul>
+    </div>
+    <script>
+        
+        // 获取所有.item元素
+        let items=document.querySelectorAll(".item");
+        // 设置当前选中项样式的方法
+        function setActive(){
+            // 遍历所有.item元素,移除active样式
+            items.forEach((item)=>{
+                item.classList.remove("active");
+            })
+            // 为当前选中项添加active样式
+            this.classList.add("active");
+        }
+        // 遍历所有.item元素,分别为其设置点击事件
+        items.forEach((item)=>{
+            item.addEventListener("click",setActive);
+        });
+    </script>
+</body>
+
+</html>
