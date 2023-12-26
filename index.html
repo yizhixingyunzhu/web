@@ -21,7 +21,6 @@
                      <i class="iconfont icon-16gl-Z"></i>
                      <i class="iconfont icon-16gl-X"></i>
                      <i class="iconfont icon-16gl-Y"></i>
-                     <i class="iconfont icon-16gl-U"></i>
                      <i class="iconfont icon-16gl-Z"></i>
                      <p class="center-w">一只幸运zhu</p>
                   </a>
@@ -113,9 +112,8 @@
                <!-- 分割线 -->
                <div class="content flex-box">
                   <!-- 左侧导航栏 -->
-                  <div class="left-nav">
                       <!-- 左侧功能组件-分割线-开始 -->
-                     <div class="menu-box">
+                     <div class="menu-box" id="left_nav">
                         <!-- 展示与隐藏侧边栏 开始-->
                         <input type="checkbox" id="menu-btn">
                         <label for="menu-btn"><i class="iconfont icon-yemianfanhui"></i></label>
@@ -213,13 +211,13 @@
                         </div>                       
                     </div>
                     <!--左侧功能组件-分割线-结束  -->
-                  </div>
+              
                      <!-- 左侧导航栏-结束 -->
                      <!-- 内容区域-开始 -->
             <div class="main-body">
-               <div class="search-main">
+               <!-- 主页搜索框-开始 -->             
                   <div class="searchBody">
-                     <div class="home-timeBox">111</div>
+                     <div class="home-timeBox">time</div>
                          <div class="home-container">
                           <i class="iconfont icon-shouye item"></i>
                           <div class="search-box">
@@ -228,15 +226,17 @@
                           <i id="searchInput" class="iconfont icon-sousuo item" onclick="searchBaidu()"></i>
                       </div>
                   </div>
-               </div>
+                <!-- 主页搜索框-结束 -->
+                <!-- 主页--轮播图-开始 -->
               <div class="above-box">
-               <div class="above-box2">
+                  <div class="above-box2">
+                     <!-- above-box3是大图的盒子 -->
                      <div class="above-box3">
-                     <img id="bigImg" src="./mySearch/components/img/img1.jpg"  alt="">
+                        <img id="bigImg" src="./mySearch/components/img/img1.jpg"  alt="">
                      </div>
                    <ul>
                          <!-- 单按alt,然后点击鼠标,可以同时选中多行的不同位置 -->
-                         <li id="showButton"><img src="./mySearch/components/img/tubiao1.jpg" alt="" /><a href="#" ><p>姓名</p></a></li>
+                         <li id="showButton1"><img src="./mySearch/components/img/tubiao1.jpg" alt="" /><a href="#" ><p>姓名</p></a></li>
                          <li id="showButton2"><img src="./mySearch/components/img/tubiao1.jpg" alt="" /><a href="#"><p>简介</p></a></li>
                          <li id="showButton3"><img src="./mySearch/components/img/tubiao1.jpg" alt="" /><a href="#" ><p>联系方式</p></a></li>
                          <li id="showButton4"><img src="./mySearch/components/img/tubiao1.jpg" alt="" />
@@ -245,12 +245,15 @@
                          <li id="showButton5"><img src="./mySearch/components/img/tubiao1.jpg" alt="">
                             <p class="center-w" id="nothing2"><a>了解更多</a>
                          </li>                       
-                     <li class="frame"></li>
+                         <li class="frame"></li>
                      </ul>
-                     <!--  -->
+                     <p class="text-on" id="hiddenText1">姓名:一只幸运zhu</p>
+                     <p class="text-on" id="hiddenText2">姓名：一只幸运zhu</p>
+                     <p class="text-on" id="hiddenText3">联系方式：<br>邮箱：zhuzhu88866654321<br><span>微信|||</span>
+                    <!--  -->
                  </div>
              </div>
-            <!-- 隐藏盒子-结束 -->
+             <!-- 主页--轮播图-结束 -->
             <!-- 内容图片展示区域-开始 -->
             <div class="img-box">         
                <img src="./mySearch/components/img/img6.jpg" alt="" >
@@ -262,7 +265,7 @@
          </div>
          <!-- 主体内容区结束 -->   
              <!--设置背景图片  -->
-            <img id="bgImg" src="./mySearch/components/img/bg4.jpg" class="main__bg">
+            <img id="bgImg" src="./mySearch/components/img/bg6.jpg" class="main__bg">
     </div>
     <center class="foot-font">
     <font>
