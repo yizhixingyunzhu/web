@@ -15,8 +15,8 @@
   --body-color: hsl(230, 100%, 98%);
   --container-color: hsl(230, 100%, 97%);
   --border-color: hsl(230, 25%, 80%);
-  --day-color: hwb(37 3% 3% / 0.999);
-  --night-color:hsl(227, 51%, 90%);
+  --day-color: hwb(0 0% 100% / 0.999);
+  --night-color:#77baf5;
   --mo-color: hwb(19 3% 4% / 0.999);
 
   /*========== Font and typography ==========*/
@@ -183,7 +183,7 @@ img {
   color: var(--first-color);
 }
 
-/* Navigation for mobile devices */
+/* Navigation for mobile devices 对于移动设备*/
 /* 导航栏 */
 @media screen and (max-width: 1023px) {
   .nav__menu {
@@ -349,7 +349,7 @@ img {
 }
 
 /*=============== BREAKPOINTS ===============*/
-/* For medium devices */
+/* For medium devices 对于中型设备 */
 @media screen and (min-width: 576px) {
   .search,
   .login {
@@ -377,7 +377,7 @@ img {
   }
 }
 
-/* For large devices */
+/* For large devices 对于大型设备*/
 @media screen and (min-width: 1023px) {
   .nav {
     height: calc(var(--header-height) + 2rem);
@@ -421,8 +421,6 @@ img {
     display :flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--body-color);
-  color: var(--text-color);/* 背景颜色 */
     width: 100%; /* 宽度为父容器的20% */
     height: 100px; /* 设置顶部导航栏高度 */
 }
@@ -434,12 +432,291 @@ img {
 .flex-box{
     display: flex;
 }
+/* 左侧导航栏 */
 .left-nav{
     height: 100%;
     width: 1%;
     margin-top:250px;
     position: fixed;
 }
+/* 左侧导航栏 */
+/* 左侧导航栏 */
+.menu-box {
+  position: relative;
+  font-family: 'Ali';
+  letter-spacing: 0.5px;
+  /* 字体粗细 */
+  font-weight: 600;
+  width: fit-content;
+  padding: 6px 12px;
+  box-sizing: border-box;
+  color: var(--night-color);
+  background-color: transparent;
+}
+.menu-box h1{
+  color:rgb(37, 31, 227);
+}
+/* 隐藏*/
+.menu-box input[type='checkbox'] {
+    display: none;
+}
+/* 按钮 */
+.menu-box>label {
+  position: absolute;
+  top: 48%;
+  right: 0;
+  transform: translateX(50%);
+  width: 18px;
+  height: 60px;
+  border-radius: 20px;
+  box-shadow: 0px 0px 4px 0px #000;
+  background-color: var(--body-color);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.menu-box>label>i {
+  font-weight: 900;
+  text-indent: -3px;
+  font-size: 20px;
+  transition: transform var(--transition-menu-time);
+  transform: rotate(0deg);
+}
+
+.menu-box>label:hover {
+  box-shadow: 0px 0px 2px 0px #000;
+  color: var(--font-color-mi-hover);
+}
+
+.menu-box>input#menu-btn:checked+label>i {
+  transform: rotate(180deg);
+}
+
+.menu{
+  width: 220px;
+  min-height: 100%;
+  cursor: pointer;
+  overflow: hidden;
+  transition: width var(--transition-menu-time);
+  color: var(--font-color-mi);
+}
+
+.menu-box>input#menu-btn:checked~.menu {
+  width: 0;
+}
+.menu-title {
+  text-align: center;
+  margin-bottom: 15px;
+}
+/* 每个大组件 */
+.menu-item>label{
+  position: relative;
+  width: 100%;
+  height: 50px;
+  border-radius: var(--border-radius-mi);
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.menu-item>label:hover {
+  color: var(--font-color-mi-hover);
+}
+/* 图标 */
+.menu-item>label>i:first-child {
+  flex: none;
+  margin-right: 6px;
+  font-size: 20px;
+}
+
+.menu-item>label>span {
+  flex: 1;
+}
+
+.menu-item>label>i:last-child {
+  flex: none;
+  font-weight: 900;
+  transform: rotate(0deg);
+  transition: transform var(--transition-menu-time);
+}
+
+.menu-item>input:checked+label>i:last-child {
+  transform: rotate(180deg);
+}
+.menu-content {
+  height: 0;
+  overflow: hidden;
+  transition: height var(--transition-menu-time);
+  display: flex;
+  flex-wrap: wrap;
+  background-color: var(--color-menu-bg);
+}
+.menu-content span{
+    margin-top: 8px;
+}
+/* 选项，若 n 项，就 n * 40px */
+.menu-item>input#menu-item1:checked~.menu-content {
+  height: calc(4 * 20px);
+}
+
+.menu-item>input#menu-item2:checked~.menu-content {
+  height: calc(9 * 20px);
+}
+
+.menu-item>input#menu-item3:checked~.menu-content {
+  height: calc(5* 40px);
+}
+.menu-item>input#menu-item4:checked~.menu-content {
+  height: calc(3 * 40px);
+}
+.menu-item>input#menu-item5:checked~.menu-content {
+  height: calc(1 * 40px);
+}
+.menu-content>span {
+  width: 100%;
+  text-indent: 20px;
+  line-height: 40px;
+  border-radius: var(--border-radius-mi);
+}
+.menu-content>span {
+  width: 100%;
+  text-indent: 20px;
+  line-height: 5px;
+  border-radius: var(--border-radius-mi);
+}
+/* 对于中型设备 */
+@media screen and (min-width:524px){
+    .menu-box {
+        margin-top: 180px;
+        position: fixed;
+        font-family: 'Ali';
+        letter-spacing: 0.5px;
+        /* 字体粗细 */
+        font-weight: 600;
+        width: fit-content;
+        padding: 6px 12px;
+        box-sizing: border-box;
+      }
+      /* 按钮 */
+        .menu-box>label {
+        position: absolute;
+        top: 42%;
+        right: 0;
+        transform: translateX(50%);
+        width: 18px;
+        height: 60px;
+         border-radius: 20px;
+        box-shadow: 0px 0px 4px 0px #000;
+        background-color: var(--body-color);
+        overflow: hidden;
+        cursor: pointer;
+     }
+}
+/* 对于移动设备 */
+@media screen and (max-width:1023px){
+    .menu-box {
+        margin-top: 50%;
+        position: fixed;
+        font-family: 'Ali';
+        letter-spacing: 0.5px;
+        /* 字体粗细 */
+        font-weight: 600;
+        width: fit-content;
+        padding: 6px 8px;
+        box-sizing: border-box;
+      }
+      .menu{
+        width: 80px;
+        font-size: 12px;
+    }
+      .menu-box h1{
+        font-size: 12px;
+      }
+      /* 隐藏*/
+      .menu-box input[type='checkbox'] {
+          display: none;
+      }
+      /* 按钮 */
+      .menu-box>label {
+        position: absolute;
+        top: 37%;
+        right: 0;
+        transform: translateX(50%);
+        width: 10px;
+        height: 45px;
+        border-radius: 20px;
+        box-shadow: 0px 0px 4px 0px #000;
+        background-color: var(--body-color);
+        overflow: hidden;
+        cursor: pointer;
+      }
+      .menu-title {
+        text-align: center;
+        margin-bottom: 5px;
+      }
+      /* 每个大组件 */
+      .menu-item>label{
+        position: relative;
+        width: 100%;
+        height: 20px;
+        border-radius: var(--border-radius-mi);
+        display: flex;
+        align-items: center;
+      }
+      /* 调整图标大小 */
+      .menu-item>label>i:first-child {
+        font-size: 8px;
+      }
+      .menu-item>label>i:last-child {
+        font-size: 12px;
+      }
+      .menu-content span i{
+        font-size: 0px;
+      }
+      /* 选项，若 n 项，就 n * 40px */
+    .menu-item>input#menu-item1:checked~.menu-content {
+      font-size: 10px;
+      margin-left: -12px;
+      height: calc(4 * 20px);
+    }
+
+    .menu-item>input#menu-item2:checked~.menu-content {
+       margin-left: -12px;
+       font-size: 10px;
+       height: calc(9 * 20px);
+    }
+
+    .menu-item>input#menu-item3:checked~.menu-content {
+    font-size: 10px;
+    margin-left: -12px;
+   height: calc(5* 20px);
+    }
+    .menu-item>input#menu-item4:checked~.menu-content {
+     margin-left: -12px;
+    font-size: 10px;
+    height: calc(3 * 20px);
+    }
+    .menu-item>input#menu-item5:checked~.menu-content {
+    margin-top: 6px;
+    margin-left: -12px;
+    font-size: 10px;
+    height: calc(1 * 20px);
+    }
+}
+/* 对于设备大小左侧导航的栏调整结束 */
+.menu-content>span:hover {
+  background-color: var(--color-bg-mi-hover);
+  color: var(--font-color-mi-hover);
+}
+.set-line {
+  margin: 20px 0 10px 0;
+  width: 100%;
+  height: 5px;
+}
+.menu-item span a{
+  color:rgb(25, 0, 255);
+}
+/* 左侧导航栏结束 */
 /* 主体内容区域- */
 .main-body{
     width: 99%;
@@ -449,80 +726,137 @@ img {
     margin-left: 0;
     flex-direction: column;
 }
-/*主体区里的搜索框*/
-.search-main{
-	display: flex;
-	justify-content: center;
-	width: 100%;
-	height: 205px;
-}
+/*主页里的搜索框*/
 .searchBody{
     display: flex;
     justify-content: center;
-	align-items: center;
-	flex-direction: column;
+	  align-items: center;
+	  flex-direction: column;
     width:100% ;
-	height: 200px;
+	  height: 200px;
     overflow: hidden;
 }
 /* 搜索框 */
 .home-container{
-	margin-top: 50px;
-    height: 60px;
-    background: rgba(255, 255, 255, 0.7);
-    display: flex;
-    padding: auto 10px;
-    justify-content: space-around;
-    align-items: center;
-    border-radius: 30px;
-    backdrop-filter: blur(4px);
-    box-shadow: 0 0 5px 1px gray;
-    z-index: 1;
-}
-/* 时间 */
-.home-timeBox{
-    /* position: absolute; */
-    background-color: transparent;
-    height: 40px;
-    top: 40%;
-    color: white;
-    text-align: center;
-    line-height: 40px;
-    font-size: 40px;
+  margin-top: 50px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.7);
+  display: flex;
+  padding: auto 10px;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 30px;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 0 5px 1px gray;
+  z-index: 1;
 }
 /* 搜索框盒子 */
 .search-box{
-    width: 200px;
-    transition: all 0.3s ease-in-out;
+  width: 200px;
+  transition: all 0.3s ease-in-out;
 }
 .home-container:hover .search-box{
-    width: 440px;
+  width: 440px;
 }
- /* 搜索栏图标 */
+/* 搜索栏图标 */
 .item{
-    margin: auto 20px;
-    font-size: 28px;
-    opacity: 0;
-    transition-delay: 0.3s;
-    transition: all 0.3s ease;
+  margin: auto 20px;
+  font-size: 20px;
+  opacity: 0;
+  transition-delay: 0.3s;
+  transition: all 0.3s ease;
 }
+/* 透明度 */
 .home-container:hover .item{
   opacity: 1;
 }
 .homeSearch-btn{
-    width: 100%;
-    border: none;
-    text-align: center;
-    outline: none;
-    background: inherit;
-    font-size: 20px;
-    transition: all 0.5s ease-in-out;
+  width: 100%;
+  border: none;
+  text-align: center;
+  outline: none;
+  background: inherit;
+  font-size: 20px;
+  transition: all 0.5s ease-in-out;
 }
 /* 搜索框里提示 */
 .homeSearch-btn::placeholder{
-    color: rgba(255, 255, 255, 0.6);
-    text-shadow: 0 0 10px #f3f3f3;
+  color: rgba(255, 255, 255, 0.7);
+  text-shadow: 0 0 10px #f3f3f3;
 }
+.home-container:hover .homeSearch-btn::placeholder{
+  color: rgba(119, 119, 119, 0.9);
+}
+/* 时间 */
+.home-timeBox{
+  background-color: transparent;
+}
+/* 对设备大小对搜索框和时间盒子调整大小 */
+@media screen and (min-width:524px){
+  .home-container{
+      margin-top: 50px;
+      height: 52px;
+      background: rgba(255, 255, 255, 0.7);
+      display: flex;
+      padding: auto 10px;
+      justify-content: space-around;
+      align-items: center;
+      border-radius: 30px;
+      backdrop-filter: blur(4px);
+      box-shadow: 0 0 5px 1px gray;
+  }
+  /* 时间 */
+  .home-timeBox{
+      background-color: transparent;
+      height: 40px;
+      top: 40%;
+      color: white;
+      text-align: center;
+      line-height: 40px;
+      font-size: 40px;
+  }
+}
+/* 对于移动设备 */
+@media screen and (max-width:323px){
+/* 搜索框 */
+.searchBody{
+  margin-top: -56px;
+  display: flex;
+  justify-content: center;
+  width:100% ;
+  height: 80px;
+  overflow: hidden;
+}
+  
+  .home-container{
+      margin-top: 0px;
+      height: 30px;
+      background: rgba(255, 255, 255, 0.7);
+      display: flex;
+      padding: auto 10px;
+      justify-content: space-around;
+      border-radius: 30px;
+      backdrop-filter: blur(4px);
+      box-shadow: 0 0 5px 1px gray;
+  }
+  .search-box{
+      width: 60px;
+      transition: all 0.3s ease-in-out;
+  }
+  .home-container:hover .search-box{
+      width: 120px;
+  }
+  .home-timeBox{
+      /* position: absolute; */
+      background-color: transparent;
+      height: 40px;
+      color: white;
+      text-align: center;
+      line-height: 40px;
+      font-size: 20px;
+  }
+}
+/*  */
 .homeSearch-btn:hover::placeholder{
   opacity: 0;
 }
@@ -542,165 +876,8 @@ img {
     cursor: pointer;
     font-size: 20px;
 }
+/* 对设备的大小对主页搜索框调整 */
 /* 分割线 */
-/* 左侧导航栏 */
-.menu-box {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    letter-spacing: 0.5px;
-    font-weight: 600;
-    position: relative;
-    width: fit-content;
-    color:  var(--day-color);
-    min-height: 100vh;
-    padding: 6px 12px;
-    box-sizing: border-box;
-  }
-  
-  .menu-box input[type='checkbox'] {
-    display: none;
-  }
-  /* 按钮 */
-  .menu-box>label {
-    position: absolute;
-    top: 30%;
-    right: 0;
-    transform: translateX(50%);
-    width: 18px;
-    height: 60px;
-    border-radius: 20px;
-    box-shadow: 0px 0px 4px 0px #000;
-    background-color: var(--body-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    z-index: 999;
-  }
-  
-  .menu-box>label>i {
-    font-weight: 900;
-    text-indent: -3px;
-    font-size: 20px;
-    transition: transform var(--transition-menu-time);
-    transform: rotate(0deg);
-  }
-  
-  .menu-box>label:hover {
-    box-shadow: 0px 0px 2px 0px #000;
-    color: var(--font-color-mi-hover);
-  }
-  
-  .menu-box>input#menu-btn:checked+label>i {
-    transform: rotate(180deg);
-  }
-  
-  .menu {
-    font-size: 18px;
-    width: 220px;
-    min-height: 100%;
-    cursor: pointer;
-    overflow: hidden;
-    transition: width var(--transition-menu-time);
-    color: var(--font-color-mi);
-  }
-  
-  .menu-box>input#menu-btn:checked~.menu {
-    width: 0;
-  }
-  
-  .menu-title {
-    text-align: center;
-    margin-bottom: 10px;
-  }
-  
-  .menu-item>label{
-    position: relative;
-    width: 100%;
-    height: 50px;
-    border-radius: var(--border-radius-mi);
-    display: flex;
-    align-items: center;
-  }
-  
-  .menu-item>label:hover {
-    color: var(--font-color-mi-hover);
-  }
-  
-  .menu-item>label>i:first-child {
-    flex: none;
-    margin-right: 6px;
-    font-size: 24px;
-  }
-  
-  .menu-item>label>span {
-    flex: 1;
-  }
-  
-  .menu-item>label>i:last-child {
-    flex: none;
-    font-size: 20px;
-    font-weight: 900;
-    transform: rotate(0deg);
-    transition: transform var(--transition-menu-time);
-  }
-  
-  .menu-item>input:checked+label>i:last-child {
-    transform: rotate(180deg);
-  }
-  
-  .menu-content {
-    height: 0;
-    overflow: hidden;
-    transition: height var(--transition-menu-time);
-    display: flex;
-    flex-wrap: wrap;
-    background-color: var(--color-menu-bg);
-  }
-  
-  /* 选项，若 n 项，就 n * 40px */
-  .menu-item>input#menu-item1:checked~.menu-content {
-    height: calc(3 * 40px);
-  }
-  
-  .menu-item>input#menu-item2:checked~.menu-content {
-    height: calc(9 * 40px);
-  }
-  
-  .menu-item>input#menu-item3:checked~.menu-content {
-    height: calc(5* 40px);
-  }
-  .menu-item>input#menu-item4:checked~.menu-content {
-    height: calc(3 * 40px);
-  }
-  .menu-item>input#menu-item5:checked~.menu-content {
-    height: calc(1 * 40px);
-  }
-  .menu-content>span {
-    width: 100%;
-    text-indent: 20px;
-    line-height: 40px;
-    border-radius: var(--border-radius-mi);
-  }
-  .menu-content>span {
-    width: 100%;
-    text-indent: 20px;
-    line-height: 40px;
-    border-radius: var(--border-radius-mi);
-  }
-  .menu-content>span:hover {
-    background-color: var(--color-bg-mi-hover);
-    color: var(--font-color-mi-hover);
-  }
-  
-  .set-line {
-    margin: 20px 0 10px 0;
-    width: 100%;
-    height: 2px;
-    background-color: var(--color-line-bg);
-  }
-  .menu-item span a{
-    color:var(--mo-color);
-  }
 /* 功能内容分割线 */
 /* 画盒子 */
 .above-box{
@@ -745,19 +922,6 @@ img {
     display: flex;
     margin-top: 0;
     justify-content: center;
-}
-.container ul .bigImg {
-	top: 0;
-	left: 0;
-	width: 1000px;
-	height: 400px;
-	/* 给大图片 也加一个透明边框 不为了啥 就是为了和小图片对称 */
-	border: 5px solid transparent;
-	/* 背景   图片路径   no-repeat是让图片不重复 默认是重复的 */
-	background: url('./img/bg-image.png') no-repeat;
-	/* 图片以宽度为最大铺满整个盒子 */
-	background-size: contain;
-	transition: all 0.5s;
 }
 /* 移动框 start */
 .above-box2 ul .frame {
@@ -806,22 +970,101 @@ img {
 .above-box ul li a{
   color:var(--mo-color);
 }
-/* 分割线 */
-/* 文字居中选择器 */
-.center-w{
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   flex-wrap: wrap;
-}
+/* 隐藏文字盒子 */
 .text-on{
   position: absolute;
-  top: 50%;
+  top: 60%;
   left: 50%;
   background:linear-gradient(to right, #9796f0, #fbc7d4);
   transform: translate(-50%,-50%);
  display: none;
  font-size: 24px;
+}
+/* 123 */
+@media screen and (max-width:386px){
+  .above-box{
+    margin-top: 15px;
+      display: flex;
+      width: 100%;
+      height: 125px; 
+  }
+  .above-box2{
+    width: 55%;
+    display: flex;
+    flex: content;
+    flex-wrap: wrap;
+    
+}
+  .above-box3{
+    top: 0;
+	  left: 0;
+    width: 60%;
+    height: 100px;
+    background-size: contain;
+	  transition: all 0.5s;
+}
+.above-box2 ul{
+  width: 60%;
+  margin-top: 2%;
+   display: flex;
+   list-style: none;
+}
+.above-box2 ul li img{
+  height: 100%;
+  width: 100%;
+}
+.above-box2 ul li{
+  border: 5px solid rgba(0,0,0,0);
+  cursor: pointer;
+}
+.above-box2 ul li p{
+  font-size: 4px;
+  display: flex;
+  margin-top: 0;
+  justify-content: center;
+}
+/* 移动框 start */
+.above-box2 ul .frame {
+	position: absolute;
+	left: 0;
+	bottom: 2px;
+	width: 20%;
+	height: 100%;
+	border: 2px solid salmon;
+	pointer-events: none;
+	/* 加过渡 */
+	transition: all 0.5s;
+}
+/* 用伪元素做三角 */
+.above-box2 ul .frame::before {
+	content: "";
+	position: absolute;
+	top: -17px;
+	/* calc方法自动计算 让三角盒子水平居中 */
+	left: calc(50% - 6px);
+	width: 12px;
+	height: 16px;
+	background-color: salmon;
+	/* 这个属性 可以去看看 */
+	clip-path: polygon(0 100%, 50% 0, 100% 100%);
+}
+/* 移动框 end */
+.text-on{
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  background:linear-gradient(to right, #9796f0, #fbc7d4);
+  transform: translate(-50%,-50%);
+  display: none;
+  font-size: 12px;
+}
+}
+/* 分割线 轮播图-结束 */
+/* 文字居中选择器 */
+.center-w{
+   display: flex;
+   justify-content: center;
+   flex-wrap: wrap;
 }
 .foot-font{
   background-color: rgb(15, 3, 3);
@@ -839,4 +1082,18 @@ img {
   width: 35%;
   margin-top: 15px;
   margin-left: 15px;
+}
+@media screen and (max-width:386px){
+  .img-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .img-box img{
+    height: 80px;
+    width: 35%;
+    margin-top: 15px;
+    margin-left: 15px;
+  }
 }
