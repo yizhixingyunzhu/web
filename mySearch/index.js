@@ -51,6 +51,31 @@ function searchBaidu() {
    var url = 'https://www.baidu.com/s?wd=' + encodeURIComponent(searchContent);
    window.open(url, '_blank');
 }
+var homeSearchBtn = document.querySelector('.homeSearch-btn')
+var style1 = document.createElement('style')
+var searchBox = document.querySelector('.search-box')
+var timeBox = document.querySelector('.home-timeBox')
+homeSearchBtn.addEventListener('focus', function () {
+    style1.innerHTML = "body::before{ filter: blur(20px); transform: scale(1.01);}";
+    document.head.appendChild(style1);
+    searchBox.style.width = '440px'
+})
+homeSearchBtn.addEventListener('blur', function () {
+    document.head.removeChild(style1);
+    searchBox.style.width = ""
+})
+
+setInterval(function () {
+    var date = new Date()
+    let hh = padZero(date.getHours())
+    let mm =padZero( date.getMinutes())
+    let ss = padZero(date.getSeconds())
+    timeBox.innerText = hh + ':' + mm + ':' + ss
+}, 1000)
+
+function padZero(n) {
+    return n > 9 ? n : '0' + n
+}
 // 登录注册功能简单实现
 let registeredData = {};
 
