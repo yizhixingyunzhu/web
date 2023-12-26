@@ -58,7 +58,11 @@ var timeBox = document.querySelector('.home-timeBox')
 homeSearchBtn.addEventListener('focus', function () {
     style1.innerHTML = "body::before{ filter: blur(20px); transform: scale(1.01);}";
     document.head.appendChild(style1);
+    if(window.innerWidth<460){
+        searchBox.style.width = '120px'
+    }else{
     searchBox.style.width = '440px'
+    }
 })
 homeSearchBtn.addEventListener('blur', function () {
     document.head.removeChild(style1);
@@ -192,28 +196,28 @@ var baidu_url = 'https://www.baidu.com/s?wd=' + encodeURIComponent(baidu);
 window.open(baidu_url, '_blank');
 }
 // 分割线
-const hiddenButton = document.getElementById('showButton');
-const hiddenText = document.getElementById('hiddenText');
+var hiddenButton1 = document.getElementById('showButton1');
+var hiddenText1 = document.getElementById('hiddenText1');
 var aboveImg=document.getElementById('bigImg');
-let isTextHidden=true;
-hiddenButton.addEventListener('mouseover',()=>{
+let isTextHidden1=true;
+hiddenButton1.addEventListener('mouseover',()=>{
     // 鼠标放置切换图片
     aboveImg.src="./mySearch/components/img/img2.jpg"
 })
-hiddenButton.addEventListener('click', () => {
-   if(isTextHidden){
-      hiddenText.style.display='block'
-      isTextHidden=false;
+hiddenButton1.addEventListener('click', () => {
+   if(isTextHidden1){
+      isTextHidden1=false;
+      hiddenText1.style.display='block'  
    }else{
-      hiddenText.style.display = 'none';
-      isTextHidden=true;
+      isTextHidden1=true;
+      hiddenText1.style.display = 'none';
    }
     
 });
-hiddenButton.addEventListener('mouseout', () => {
+hiddenButton1.addEventListener('mouseout', () => {
      // 恢复原来的图片
     aboveImg.src="./mySearch/components/img/img1.jpg"
-    hiddenText.style.display = 'none';
+    hiddenText1.style.display = 'none';
 });
 // 2
 const hiddenButton2 = document.getElementById('showButton2');
@@ -234,9 +238,9 @@ hiddenButton2.addEventListener('click', () => {
     
 });
 hiddenButton2.addEventListener('mouseout', () => {
-     // 恢复原来的图片
+       hiddenText2.style.display = 'none';
+      // 恢复原来的图片
     aboveImg.src="./mySearch/components/img/img1.jpg"
-    hiddenText2.style.display = 'none';
 });
 // 3
 const hiddenButton3 = document.getElementById('showButton3');
@@ -324,16 +328,20 @@ window.open(my,'_blank');
 // 夜间模式实现
 // 
 // 获取按键id和背景图片id
-const day_night = document.getElementById('day_night')
+var day_night = document.getElementById('day_night')
 var bgImg=document.getElementById('bgImg')
-var isChangeDay_night=true
+let isChangeDay_night=true
+var left_nav=document.getElementById('left_nav')
 day_night.addEventListener('click', () =>{
    if(isChangeDay_night){
-      bgImg.src="./mySearch/components/img/bg3.jpg"
+      bgImg.src="./mySearch/components/img/bg4.jpg"
+      left_nav.style.backgroundColor="transparent"
       isChangeDay_night=false
+      left_nav.style.color="var(--night-color)"  
    }
    else {
-      bgImg.src="./mySearch/components/img/bg4.jpg"
-       isChangeDay_night=true
+      isChangeDay_night=true
+      bgImg.src="./mySearch/components/img/bg6.jpg"
+      left_nav.style.color="var(--day-color)" 
    }
 })
