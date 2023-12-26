@@ -169,8 +169,12 @@ window.open(baidu_url, '_blank');
 // 分割线
 const hiddenButton = document.getElementById('showButton');
 const hiddenText = document.getElementById('hiddenText');
+var aboveImg=document.getElementById('bigImg');
 let isTextHidden=true;
-
+hiddenButton.addEventListener('mouseover',()=>{
+    // 鼠标放置切换图片
+    aboveImg.src="./mySearch/components/img/img2.jpg"
+})
 hiddenButton.addEventListener('click', () => {
    if(isTextHidden){
       hiddenText.style.display='block'
@@ -182,13 +186,18 @@ hiddenButton.addEventListener('click', () => {
     
 });
 hiddenButton.addEventListener('mouseout', () => {
+     // 恢复原来的图片
+    aboveImg.src="./mySearch/components/img/img1.jpg"
     hiddenText.style.display = 'none';
 });
 // 2
 const hiddenButton2 = document.getElementById('showButton2');
 const hiddenText2 = document.getElementById('hiddenText2');
 let isTextHidden2=true;
-
+hiddenButton2.addEventListener('mouseover',()=>{
+    // 鼠标放置切换图片
+    aboveImg.src="./mySearch/components/img/img3.jpg"
+})
 hiddenButton2.addEventListener('click', () => {
    if(isTextHidden2){
       hiddenText2.style.display='block'
@@ -200,13 +209,18 @@ hiddenButton2.addEventListener('click', () => {
     
 });
 hiddenButton2.addEventListener('mouseout', () => {
+     // 恢复原来的图片
+    aboveImg.src="./mySearch/components/img/img1.jpg"
     hiddenText2.style.display = 'none';
 });
 // 3
 const hiddenButton3 = document.getElementById('showButton3');
 const hiddenText3 = document.getElementById('hiddenText3');
 let isTextHidden3=true;
-
+// 鼠标放置切换图片
+hiddenButton3.addEventListener('mouseover',()=>{
+    aboveImg.src="./mySearch/components/img/img4.jpg"
+})
 hiddenButton3.addEventListener('click', () => {
    if(isTextHidden3){
       hiddenText3.style.display='block'
@@ -214,16 +228,21 @@ hiddenButton3.addEventListener('click', () => {
    }else{
       hiddenText3.style.display = 'none';
       isTextHidden3=true;
-   }
-    
+   } 
 });
 hiddenButton3.addEventListener('mouseout', () => {
+    // 恢复原来的图片
+    aboveImg.src="./mySearch/components/img/img1.jpg"
     hiddenText3.style.display = 'none';
 });
+// 4
 const hiddenButton4 = document.getElementById('showButton4');
 const hiddenText4 = document.getElementById('hiddenText4');
 let isTextHidden4=true;
-
+// 鼠标放置切换图片
+hiddenButton4.addEventListener('mouseover',()=>{
+    aboveImg.src="./mySearch/components/img/img5.jpg"
+})
 hiddenButton4.addEventListener('click', () => {
    if(isTextHidden4){
       hiddenText4.style.display='block'
@@ -235,8 +254,34 @@ hiddenButton4.addEventListener('click', () => {
     
 });
 hiddenButton4.addEventListener('mouseout', () => {
+     // 恢复原来的图片
+    aboveImg.src="./mySearch/components/img/img1.jpg"
     hiddenText4.style.display = 'none';
 });
+// 5，第五个图标信息
+const hiddenButton5 = document.getElementById('showButton5');
+const hiddenText5 = document.getElementById('hiddenText5');
+let isTextHidden5=true;
+// 鼠标放置切换图片
+hiddenButton5.addEventListener('mouseover',()=>{
+    aboveImg.src="./mySearch/components/img/img6.jpg"
+})
+hiddenButton5.addEventListener('click', () => {
+   if(isTextHidden4){
+      hiddenText4.style.display='block'
+      isTextHidden4=false;
+   }else{
+      hiddenText5.style.display = 'none';
+      isTextHidden4=true;
+   }
+    
+});
+hiddenButton5.addEventListener('mouseout', () => {
+     // 恢复原来的图片
+    aboveImg.src="./mySearch/components/img/img1.jpg"
+    hiddenText4.style.display = 'none';
+});
+
 // 分割线
 // 无卵用的函数
 function nothing(){
@@ -259,11 +304,11 @@ var bgImg=document.getElementById('bgImg')
 var isChangeDay_night=true
 day_night.addEventListener('click', () =>{
    if(isChangeDay_night){
-      bgImg.src="./mySearch/components/img/bg3.jpg"
+      bgImg.src="./mySearch/components/img/img/bg3.jpg"
       isChangeDay_night=false
    }
    else {
-      bgImg.src="./mySearch/components/img/bg4.jpg"
+      bgImg.src="./mySearch/components/img/img/bg4.jpg"
        isChangeDay_night=true
    }
 })
