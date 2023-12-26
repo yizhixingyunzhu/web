@@ -304,11 +304,11 @@ var bgImg=document.getElementById('bgImg')
 var isChangeDay_night=true
 day_night.addEventListener('click', () =>{
    if(isChangeDay_night){
-      bgImg.src="./mySearch/components/img/img/bg3.jpg"
+      bgImg.src="./mySearch/components/img/bg3.jpg"
       isChangeDay_night=false
    }
    else {
-      bgImg.src="./mySearch/components/img/img/bg4.jpg"
+      bgImg.src="./mySearch/components/img/bg4.jpg"
        isChangeDay_night=true
    }
 })
