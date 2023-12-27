@@ -58,7 +58,8 @@ var timeBox = document.querySelector('.home-timeBox')
 homeSearchBtn.addEventListener('focus', function () {
     style1.innerHTML = "body::before{ filter: blur(20px); transform: scale(1.01);}";
     document.head.appendChild(style1);
-    if(window.innerWidth<460){
+     // 判断屏幕宽度
+    if(window.innerWidth<567){
         searchBox.style.width = '120px'
     }else{
     searchBox.style.width = '440px'
