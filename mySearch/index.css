@@ -30,7 +30,7 @@
   /*========== Font weight ==========*/
   /* 字体粗细 */
   --font-regular: 400;
-  --font-medium: 500;
+  --font-medium: 500; 
   --font-semi-bold: 600;
 
   /*========== z index 指数 ==========*/
@@ -159,7 +159,7 @@ img {
 
 .nav__logo {
   color: var(--title-color);
-  font-weight: var(--font-semi-bold);
+  font-weight: var(--font-semi-bold); 
   transition: color .4s;
 }
 
@@ -185,7 +185,7 @@ img {
 
 /* Navigation for mobile devices 对于移动设备*/
 /* 导航栏 */
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 1023px) { 
   .nav__menu {
     position: fixed;
     top: -100%;
@@ -792,7 +792,7 @@ img {
   background-color: transparent;
 }
 /* 对设备大小对搜索框和时间盒子调整大小 */
-@media screen and (min-width:524px){
+@media screen and (min-width:624px){  
   .home-container{
       margin-top: 50px;
       height: 52px;
@@ -807,7 +807,7 @@ img {
   }
   /* 时间 */
   .home-timeBox{
-      background-color: transparent;
+      background-color: transparent; 
       height: 40px;
       top: 40%;
       color: white;
@@ -817,7 +817,7 @@ img {
   }
 }
 /* 对于移动设备 */
-@media screen and (max-width:323px){
+@media screen and (max-width:1023px){
 /* 搜索框 */
 .searchBody{
   margin-top: -56px;
@@ -948,7 +948,7 @@ img {
 	height: 16px;
 	background-color: salmon;
 	/* 这个属性 可以去看看 这里就不啰嗦了 */
-	clip-path: polygon(0 100%, 50% 0, 100% 100%);
+	clip-path: polygon(0 100%, 50% 0, 100% 100%); 
 }
 /* 移动框 end */
 .above-box2 ul li:nth-child(1):hover ~ .frame {
@@ -981,7 +981,7 @@ img {
  font-size: 24px;
 }
 /* 123 */
-@media screen and (max-width:386px){
+@media screen and (max-width:1023px){  
   .above-box{
     margin-top: 15px;
       display: flex;
