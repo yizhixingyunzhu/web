@@ -54,7 +54,7 @@ function searchBaidu() {
 var homeSearchBtn = document.querySelector('.homeSearch-btn')
 var style1 = document.createElement('style')
 var searchBox = document.querySelector('.search-box')
-var timeBox = document.querySelector('.home-timeBox')
+var timeBox = document.getElementById("NowTime")
 homeSearchBtn.addEventListener('focus', function () {
     style1.innerHTML = "body::before{ filter: blur(20px); transform: scale(1.01);}";
     document.head.appendChild(style1);
@@ -69,15 +69,14 @@ homeSearchBtn.addEventListener('blur', function () {
     document.head.removeChild(style1);
     searchBox.style.width = ""
 })
-
+//时间
 setInterval(function () {
     var date = new Date()
     let hh = padZero(date.getHours())
     let mm =padZero( date.getMinutes())
     let ss = padZero(date.getSeconds())
-    timeBox.innerText = hh + ':' + mm + ':' + ss
+    NowTime.innerText = hh + ':' + mm + ':' + ss
 }, 1000)
-
 function padZero(n) {
     return n > 9 ? n : '0' + n
 }
@@ -109,7 +108,6 @@ function handleRegister() {
        alert('用户名已存在，请选择其他用户名！');
       }
 }
-// 搜索的简单实现
 // 定义一个对象，用于存储函数
 const functions = {
    //空函数，用于赋值
@@ -191,10 +189,10 @@ baiduSearch.addEventListener('click',function(){
 })
 //分割线
 // 页面里的搜素框实现
-function searchBaidu2() {
-   var baidu = document.getElementById('baiduSearch').value;
-var baidu_url = 'https://www.baidu.com/s?wd=' + encodeURIComponent(baidu);
-window.open(baidu_url, '_blank');
+function searchBaidu2(){
+   var searchContent = document.getElementById('search-Baidu').value;
+   var url = 'https://www.baidu.com/s?wd=' + encodeURIComponent(searchContent);
+   window.open(url, '_blank');
 }
 // 分割线
 var hiddenButton1 = document.getElementById('showButton1');
@@ -346,3 +344,15 @@ day_night.addEventListener('click', () =>{
       left_nav.style.color="var(--day-color)" 
    }
 })
+// 下载
+const downloadLink = document.getElementById('downloadLink');
+downloadLink.addEventListener('click', downloadFile);
+
+function downloadFile() {
+    const fileUrl = './components/file/cpp_NNLG_Project.rar';
+    const fileName = 'cpp_NNLG_Project.rar';
+    const a = document.createElement('a');
+    a.href = fileUrl;
+    a.download = fileName;
+    a.click();
+}
